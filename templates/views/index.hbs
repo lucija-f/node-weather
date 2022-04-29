@@ -11,18 +11,20 @@
 <body>
   <div class="main-content">
     {{>header}}
+  <div class="central-content">
     <p>
       Use this site to get your weather
+    </p>
 
       <form>
-        <input placeholder="find location">
+        <input placeholder="Search for location">
         <button>SERACH</button>
 
         <p id="weatherMsg1"></p>
         <p id="weatherMsg2"></p>
-        <p></p>
+        <img id="icon" src=""></img>
       </form>
-    </p>
+  </div>
   </div>
 
   {{>footer}}

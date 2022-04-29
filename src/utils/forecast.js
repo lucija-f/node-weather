@@ -12,11 +12,15 @@ const forecast = (latitude, longitude, callback) => {
       }
       else {
         const { name, country } = body.location
-        const { temperature, feelslike } = body.current
-        callback(undefined, `${name}, ${country}: It\'s currently ${temperature} degress out. It feels like ${feelslike} dergess out`)
+        const { temperature, feelslike, weather_descriptions } = body.current
+        const weather_icons = body.current.weather_icons[0]
+        callback(undefined, {
+          weather_icons,
+          message: `${name}, ${country}: It\'s currently ${temperature} degress out. It feels like ${feelslike} dergess out.
+          It is ${weather_descriptions}`
+        }, )
       }
   })
 }
-
 
 module.exports = forecast

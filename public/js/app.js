@@ -6,6 +6,7 @@ const weatherForm = document.querySelector('form')
 const searchElement = document.querySelector('input')
 const weatherMsg1 = document.querySelector('#weatherMsg1')
 const weatherMsg2 = document.querySelector('#weatherMsg2')
+const imageIcon = document.querySelector('#icon')
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -21,9 +22,9 @@ weatherForm.addEventListener('submit', (event) => {
           console.log(data.error);
         } else {
           weatherMsg1.textContent = data.location
-          weatherMsg2.textContent = data.forecast
-          console.log(data.location);
-          console.log(data.forecast);
+          weatherMsg2.textContent = data.forecastMsg
+          imageIcon.src = data.weatherIcon
+          searchElement.value = ''
         }
       }))
     })

@@ -1,9 +1,13 @@
+* {
+  overflow-x: hidden;
+}
+
 body {
   color: #333333;
   font-family: arial;
-  max-width: 650px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0px;
 
   display: flex;
   flex-direction: column;
@@ -14,15 +18,32 @@ body {
   flex-grow: 1;
 }
 
+.central-content{
+  max-width: 80%;
+  margin: auto;
+}
+
+.header-content{
+  max-width: 80%;
+  margin: auto;
+}
+
 header {
   margin-top: 16px;
   margin-bottom: 48px;
+  background-color: #90CAF9;
+  flex: 0 0 50px;
+  width: 100%;
+  padding: 0 30px;
 }
 
 footer {
   border-top: 1px solid #eeeeee;
   margin-top: 16px;
-  padding: 16px 0;
+  width: 100%;
+  background-color: #90CAF9;
+  padding: 0 30px;
+  color: #a2a2a2;
 }
 
 h1 {
@@ -38,6 +59,10 @@ header a {
 
 .portrait {
   width: 600px;
+}
+
+#icon {
+  width: 100px;
 }
 
 input {

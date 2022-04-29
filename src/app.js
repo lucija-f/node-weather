@@ -38,7 +38,7 @@ app.get('/help', (req, res) => {
   res.render('help', {
     title: 'Help page',
     name: 'Lucija',
-    message: 'This is important message'
+    message: ''
   })
 })
 
@@ -57,9 +57,10 @@ app.get('/weather', (req, res) => {
             return res.send({ error });
           }
           res.send({
-            forecast: forecastData,
+            forecastMsg: forecastData.message,
+            weatherIcon: forecastData.weather_icons,
             location,
-            address: req.query.address
+            address: req.query.address,
           })
         })
     })
